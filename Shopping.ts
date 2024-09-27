@@ -1,8 +1,8 @@
 
 //Se importa la clase order 
-import { Order } from "./Order";
-class MaxHeap_shopping {
-    public heap: Order[];
+import { Purchase_Order } from "./Purchase_order";
+export class MaxHeap_shopping {
+    public heap: Purchase_Order[];
     private n: number; // n = cantidad de elementos ingresados
 
     constructor(size: number) {
@@ -15,7 +15,7 @@ class MaxHeap_shopping {
         return this.n == 0;
     }
 
-    public insert(order: Order): void {
+    public insert(order: Purchase_Order): void {
         if (this.n == (this.heap.length - 1))
             this.resize(2 * this.heap.length);
         this.n++;
@@ -26,7 +26,7 @@ class MaxHeap_shopping {
     private swap(i: number): void {
         let father: number = Math.floor(i / 2);
         while (i > 1 && this.heap[father].getPurchasePrice() < this.heap[i].getPurchasePrice()) {
-            let temp: Order = this.heap[father];
+            let temp: Purchase_Order = this.heap[father];
             this.heap[father] = this.heap[i];
             this.heap[i] = temp;
             i = father;
@@ -36,20 +36,20 @@ class MaxHeap_shopping {
 
     //metodo para re ajustar el tamaño 
     private resize(newSize: number): void {
-        let newHeap: Order[] = new Array(newSize);
+        let newHeap: Purchase_Order[] = new Array(newSize);
         for (let i = 1; i < this.heap.length; i++)
             newHeap[i] = this.heap[i];
         this.heap = newHeap;
     }
 
     //con este metodo obtenemos la accion con el ofrecimiento mayor 
-    public getMax(): Order {
+    public getMax(): Purchase_Order {
         if (this.isEmpty()) {
             throw new Error("Heap is empty");
         }
     
         //Decimos que el maximo sera la raiz y se intercambia por el ultimo 
-        let max: Order = this.heap[1];
+        let max: Purchase_Order = this.heap[1];
         this.heap[1] = this.heap[this.n];
         this.n--;
         this.sink(1);
@@ -66,7 +66,7 @@ class MaxHeap_shopping {
                 break;
 
             // Hacemos intercambio burbuja entre los nodos para que el mayor quede en la raíz
-            let temp: Order = this.heap[i];
+            let temp: Purchase_Order = this.heap[i];
             this.heap[i] = this.heap[j];
             this.heap[j] = temp;
 
@@ -81,11 +81,11 @@ let purchase_order: MaxHeap_shopping = new MaxHeap_shopping(10);
 
 // Insertar órdenes de compra en el montículo
 //Nombre de la compañia, cuantas acciones y el precio que se ofrece por C/U
-purchase_order.insert(new Order('Apple', 100, 5000));  
-purchase_order.insert(new Order('Google', 50, 1000)); 
-purchase_order.insert(new Order('Microsoft', 200, 300)); 
-purchase_order.insert(new Order('Amazon', 500, 2000)); 
-purchase_order.insert(new Order('Facebook', 140, 1300));
+purchase_order.insert(new Purchase_Order('Apple', 100, 200));  
+purchase_order.insert(new Purchase_Order('Google', 50, 750)); 
+purchase_order.insert(new Purchase_Order('Microsoft', 150, 300)); 
+purchase_order.insert(new Purchase_Order('Amazon', 500, 200)); 
+purchase_order.insert(new Purchase_Order('Facebook', 140, 130));
 
 //Al impirmir accedo a getMax y de ahi accedo a toString para que me imprima compañia, cuantas
 //acciones y el precio que se ofrece

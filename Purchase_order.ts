@@ -1,7 +1,7 @@
 
 //Se utilizara el nombre de la compañia, la cantidad de acciones y el precio individual
 //que se ofrece por ellas 
-export class Order {
+export class Purchase_Order {
     private company: string;
     private quantity: number;
     private purchase_price: number;

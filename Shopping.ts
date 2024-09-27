@@ -75,22 +75,3 @@ export class MaxHeap_shopping {
         }
     }
 }
-
-// main
-let purchase_order: MaxHeap_shopping = new MaxHeap_shopping(10);
-
-// Insertar órdenes de compra en el montículo
-//Nombre de la compañia, cuantas acciones y el precio que se ofrece por C/U
-purchase_order.insert(new Purchase_Order('Apple', 100, 200));  
-purchase_order.insert(new Purchase_Order('Google', 50, 750)); 
-purchase_order.insert(new Purchase_Order('Microsoft', 150, 300)); 
-purchase_order.insert(new Purchase_Order('Amazon', 500, 200)); 
-purchase_order.insert(new Purchase_Order('Facebook', 140, 130));
-
-//Al impirmir accedo a getMax y de ahi accedo a toString para que me imprima compañia, cuantas
-//acciones y el precio que se ofrece
-console.log(purchase_order.getMax().toString());
-console.log(purchase_order.getMax().toString());
-console.log(purchase_order.getMax().toString());
-console.log(purchase_order.getMax().toString());
-console.log(purchase_order.getMax().toString());

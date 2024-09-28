@@ -11,11 +11,9 @@ purchase_order.insert(new Purchase_Order('Microsoft', 150, 3));
 purchase_order.insert(new Purchase_Order('Amazon', 500, 4)); 
 purchase_order.insert(new Purchase_Order('Facebook', 140, 5));
 
-//Al impirmir accedo a getMax y de ahi accedo a toString para que me imprima compañia, cuantas
-//acciones y el precio que se ofrece
+//Este for ejecutara la accion .getMax y toString 5 veces
 console.log('COMPRA DE ACCIONES:')
-console.log(purchase_order.getMax().toString());
-console.log(purchase_order.getMax().toString());
-console.log(purchase_order.getMax().toString());
-console.log(purchase_order.getMax().toString());
-console.log(purchase_order.getMax().toString());
+for (let i = 0; i < 5; i++){
+    console.log(purchase_order.getMax().toString());
+}
+

@@ -68,19 +68,5 @@ export class MinHeap_selling {
     }
 }
 
-// main
-let sale_order: MinHeap_selling = new MinHeap_selling(7);
-sale_order.insert(new Sale_Order('Apple', 100, 1));  
-sale_order.insert(new Sale_Order('Google', 50, 2)); 
-sale_order.insert(new Sale_Order('Microsoft', 150, 3)); 
-sale_order.insert(new Sale_Order('Amazon', 500, 4)); 
-sale_order.insert(new Sale_Order('Facebook', 140, 5));
-
-console.log('VENTA DE ACCIONES:')
-console.log(sale_order.getMin().toString());
-console.log(sale_order.getMin().toString());
-console.log(sale_order.getMin().toString());
-console.log(sale_order.getMin().toString());
-console.log(sale_order.getMin().toString());
 
 
